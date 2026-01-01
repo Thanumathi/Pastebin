@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Pasteform from "../components/pasteForm";
-import { createPaste } from "../api.js";
+import { CreatePaste } from "../api.js";
 
 export default function CreatePaste() {
   const [pasteUrl, setPasteUrl] = useState("");
 
   const handleCreate = async (payload) => {
     try {
-      const res = await createPaste(payload);
+      const res = await CreatePaste(payload);
       setPasteUrl(res.url);
     } catch (err) {
       alert(err.message || "Failed to create paste");
