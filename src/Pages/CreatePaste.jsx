@@ -6,12 +6,8 @@ export default function CreatePaste() {
   const [pasteUrl, setPasteUrl] = useState("");
 
   const handleCreate = async (payload) => {
-    try {
-      const res = await createPaste(payload);
-      setPasteUrl(res.url);
-    } catch (err) {
-      alert("Failed to create paste");
-    }
+    const res = await createPaste(payload);
+    setPasteUrl(res.url);
   };
 
   return (
@@ -21,12 +17,7 @@ export default function CreatePaste() {
       {pasteUrl && (
         <div className="mt-4 p-4 bg-green-100 border border-green-300 rounded">
           <p>Paste created!</p>
-          <a
-            href={pasteUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 underline"
-          >
+          <a href={pasteUrl} className="text-blue-600 underline">
             {pasteUrl}
           </a>
         </div>
