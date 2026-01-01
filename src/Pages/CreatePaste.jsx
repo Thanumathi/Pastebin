@@ -6,8 +6,12 @@ export default function CreatePaste() {
   const [pasteUrl, setPasteUrl] = useState("");
 
   const handleCreate = async (payload) => {
-    const res = await createPaste(payload);
-    setPasteUrl(res.url);
+    try {
+      const res = await createPaste(payload);
+      setPasteUrl(res.url);
+    } catch (err) {
+      alert("Failed to create paste");
+    }
   };
 
   return (
