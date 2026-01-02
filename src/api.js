@@ -1,6 +1,6 @@
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-export async function CreatePaste(payload) {
+export async function createPaste(payload) {
   const res = await fetch(`${BASE_URL}/api/pastes`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
