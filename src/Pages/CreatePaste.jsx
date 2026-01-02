@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Pasteform from "../components/pasteForm";
-import { createPaste } from "../api"; 
+import { createPaste } from "../api.js"; 
 
 export default function CreatePaste() {
   const [pasteUrl, setPasteUrl] = useState("");
